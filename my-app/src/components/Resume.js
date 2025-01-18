@@ -73,7 +73,7 @@ const Resume = () => {
             <h1>Adithya Sakthimani</h1>
             <div className="contact-info">
               <p><strong>Email: </strong> adithyasmani.et23@rvce.edu.in</p>
-              <p><strong>Phone: </strong>  9866100630</p>
+              <p><strong>Phone: </strong>  +91 9866100630</p>
               <p><strong>Location: </strong>  Bengaluru</p>
               <p><strong>Personal Website:</strong> <a href="https://my-portforlio-fbwa.vercel.app/" target="_blank" className='my-web'> 
                My Website <ExternalLink  size={20}/> </a></p>
@@ -91,8 +91,8 @@ const Resume = () => {
             company="Dyu Labs, Bangalore"
             period="08/2024 – Present"
             achievements={[
-              "Participated in workshops and presentations focused on IoT solutions",
-              "Contributed to building and implementing a water level measurement system to gain hands-on experience"
+              "Participated in workshops and presentations focused on IoT solutions.",
+              "Contributed to building and implementing a water level measurement system to gain hands-on experience."
             ]}
           />
         </ResumeSection>
@@ -102,8 +102,8 @@ const Resume = () => {
             title="Smart Fitness Tracker AI (Elevate Fitness AI)"
             description="Developed a comprehensive fitness tracking system leveraging OpenCV for real-time pose estimation to ensure proper exercise form and track repetitions."
             achievements={[
-              "Integrated real-time sensors for heart rate monitoring (MAX30100), calorie tracking, and workout analysis using Embedded C",
-              "The system features a user-friendly web interface built with React, Node.js, and Express, along with a MongoDB database for personalized goal tracking and progress visualization"
+              "Integrated real-time sensors for heart rate monitoring (MAX30100), calorie tracking, and workout analysis using Embedded C.",
+              "The system features a user-friendly web interface built with React, Node.js, and Express, along with a MongoDB database for personalized goal tracking and progress visualization."
             ]}
             github="Smart Exercise Trainer Kit"
           />
@@ -111,8 +111,8 @@ const Resume = () => {
             title="Skin Disease Detection AI (Derma Doc AI)"
             description="Developed an AI-powered platform trained on a dataset of skin diseases and images to accurately diagnose conditions."
             achievements={[
-              "Utilized TensorFlow for image analysis and Lepton LLM for processing text-based user queries, offering an interactive experience like consulting a doctor",
-              "The platform also suggests nearby doctors based on the diagnosed condition. Built with a React frontend and Flask, Express, and MongoDB backend for seamless data management and real-time feedback"
+              "Utilized TensorFlow for image analysis and Lepton LLM for processing text-based user queries, offering an interactive experience like consulting a doctor.",
+              "The platform also suggests nearby doctors based on the diagnosed condition. Built with a React frontend and Flask, Express, and MongoDB backend for seamless data management and real-time feedback."
             ]}
             github="Derma Doc AI"
           />
@@ -120,8 +120,8 @@ const Resume = () => {
             title="Image Steganography"
             description="Developed a secure image steganography platform that embeds hidden messages in images, using Huffman Tree for efficient text encryption."
             achievements={[
-              "The system employs Discrete Wavelet Transform (DWT) and Haar Transform for embedding the encrypted data into the image, ensuring both security and high-quality image integrity",
-              "The frontend is built using Vite for fast and modern web development, providing an intuitive interface for users to easily encrypt and decode messages"
+              "The system employs Discrete Wavelet Transform (DWT) and Haar Transform for embedding the encrypted data into the image, ensuring both security and high-quality image integrity.",
+              "The frontend is built using Vite for fast and modern web development, providing an intuitive interface for users to easily encrypt and decode messages."
             ]}
             github="Image Steganography"
           />
@@ -161,8 +161,8 @@ const Resume = () => {
 
         <ResumeSection title="Extracurricular Achievements" icon={<Trophy className="section-icon" />}>
           <ul className="achievements-list">
-            <li>Won 2nd Place by representing RVCE at VTU Interzonals and Zonals Chess tournaments</li>
-            <li>Selected for VTU Nationals Team and Represented Kerala at Nation Chess tournament in Nashik</li>
+            <li>Won 2nd Place by representing RVCE at VTU Interzonals and Zonals Chess tournaments.</li>
+            <li>Selected for VTU Nationals Team and Represented Kerala at Nation Chess tournament in Nashik.</li>
           </ul>
         </ResumeSection>
       </div>

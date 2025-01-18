@@ -103,9 +103,7 @@ const About = () => {
     <div className='about-txt'>
     <h1>About Me</h1>
     <p className="intro">
-      I'm a passionate Student specializing in Electronics and Web Development. 
-      With   years of coding experience, I focus on creating innovative applications that solve 
-      real-world problems using cutting-edge technology.
+    I am a passionate student specializing in Electronics and Web Development. My years of coding experience have equipped me to create innovative applications that address real-world challenges using cutting-edge technology.
     </p>
     <div className="my-social-links">
       <a href="https://github.com/AdithyaSakthimani" className="social-link">

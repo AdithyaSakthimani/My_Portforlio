@@ -10,7 +10,6 @@ import img4 from './components/images/Screenshot 2025-01-17 181700.png'
 import img5 from './components/images/Screenshot 2025-01-17 181801.png'
 export const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollTop;
@@ -102,7 +101,10 @@ const Portfolio = () => {
           <Telescope size={20} />
           Explore
         </button>
-        <button className="button-primary">
+        <button className="button-primary" onClick = {
+()=>{
+  window.open("https://github.com/AdithyaSakthimani", "_blank")
+}        }>
           <Github size={20} />
           GitHub
         </button>
