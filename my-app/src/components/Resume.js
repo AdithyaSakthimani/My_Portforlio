@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Briefcase, GraduationCap, Code, Trophy } from 'lucide-react';
+import { Download, Briefcase, GraduationCap, Code, Trophy,ExternalLink} from 'lucide-react';
 import './Resume.css';
 import pdfUrl from '../resume/my_resume.pdf'
 const ResumeSection = ({ title, icon, children }) => (
@@ -75,7 +75,8 @@ const Resume = () => {
               <p><strong>Email: </strong> adithyasmani.et23@rvce.edu.in</p>
               <p><strong>Phone: </strong>  9866100630</p>
               <p><strong>Location: </strong>  Bengaluru</p>
-              <p><strong>Personal Website:</strong> abcd.com</p>
+              <p><strong>Personal Website:</strong> <a href="https://my-portforlio-six.vercel.app/" target="_blank" className='my-web'> 
+               My Website <ExternalLink  size={20}/> </a></p>
             </div>
           </div>
           <button onClick={handleDownload} className="download-button">
