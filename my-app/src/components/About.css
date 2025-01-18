@@ -1,0 +1,286 @@
+/* Container Layout */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Hero Section */
+.about-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 0;
+  margin-bottom: 4rem;
+}
+
+.hero-content {
+  display: flex;
+  column-gap: 15rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+}
+
+.waving-man {
+  width: 50%;
+  height: 500px;
+}
+
+/* Social Links */
+.my-social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.social-link:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  color: var(--text-gray);
+}
+
+/* Section Common Styles */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+}
+
+.section-icon {
+  color: var(--primary-color);
+}
+
+/* Journey Timeline */
+.journey-section {
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-marker svg {
+  background: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.year {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+.timeline-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-content h3 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  color: var(--text-gray);
+}
+
+/* Skills Section */
+.skills-section {
+  margin-bottom: 4rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-tag {
+  background: var(--background-light);
+  color: var(--text-gray);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  transition: var(--transition);
+}
+
+.skill-tag:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Interests Section */
+.interests-section {
+  margin-bottom: 4rem;
+}
+
+.interests-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.interest-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.interest-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.interest-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.interest-card p {
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+ .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .waving-man{
+    width: 100%;
+  }
+  .hero-stats{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    column-gap: 12rem;
+    align-items: center;
+  }
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline-marker {
+    left: -2rem;
+  }
+}
+@media(max-width: 1050px){
+  .hero-stats{
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .waving-man {
+    width: 100%;
+  }
+}
