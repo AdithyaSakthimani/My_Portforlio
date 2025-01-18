@@ -8,6 +8,23 @@ import img2 from './components/images/Screenshot 2025-01-01 182714.png'
 import img3 from './components/images/Screenshot 2025-01-03 003853.png'
 import img4 from './components/images/Screenshot 2025-01-17 181700.png'
 import img5 from './components/images/Screenshot 2025-01-17 181801.png'
+export const ScrollProgress = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollTop;
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scroll = totalScroll / windowHeight;
+      setScrollProgress(scroll);
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  return <div className="scroll-progress" style={{transform: `scaleX(${scrollProgress})`}} />;
+}
 const Portfolio = () => {
   const navigate = useNavigate() ; 
   const [result, setResult] = useState("");
@@ -143,6 +160,11 @@ const Portfolio = () => {
         Send Message
       </button>
     </form>
+    {showAlert && (
+          <div className={`alert ${result.includes('Successfully') ? 'alert-success' : 'alert-error'}`}>
+            {result}
+          </div>
+        )}
   </section>
 
   {/* Social Footer */}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import HomePage from './HomePage';
+import HomePage, { ScrollProgress } from './HomePage';
 import reportWebVitals from './reportWebVitals';
 import NoteState from './components/NoteState';
 import {
@@ -24,6 +24,7 @@ root.render(
   <NoteState>
     <Router>
        <Navbar/>
+       <ScrollProgress/>
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/resume" element={<Resume/>} />
