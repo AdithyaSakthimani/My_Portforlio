@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X , Moon , Sun } from 'lucide-react';
 import './Navbar.css';
 import logo from './images/my-logo.png'
+import NoteContext from './NoteContext';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const{mode,setMode} = useContext(NoteContext)
   const handleLinkClick = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth', 
     });
   };
-
+  const toogleMode =(mode)=>{
+    if(mode === 'light'){
+      setMode('dark')
+    }
+    else{
+      setMode('light')
+    }
+  }
   return (
     <nav className="navbar">
       <div className="container nav-container">

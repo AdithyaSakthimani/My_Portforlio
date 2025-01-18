@@ -75,7 +75,7 @@ const Resume = () => {
               <p><strong>Email: </strong> adithyasmani.et23@rvce.edu.in</p>
               <p><strong>Phone: </strong>  +91 9866100630</p>
               <p><strong>Location: </strong>  Bengaluru</p>
-              <p><strong>Personal Website:</strong> <a href="https://my-portforlio-fbwa.vercel.app/" target="_blank" className='my-web'> 
+              <p><strong>Personal Website:</strong> <a href="https://my-portforlio-fbwa.vercel.app/" target="_blank"  rel="noreferrer" className='my-web'> 
                My Website <ExternalLink  size={20}/> </a></p>
             </div>
           </div>

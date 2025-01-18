@@ -704,3 +704,10 @@
     max-width: none;
   }
 }
+.hero-title{
+  font-weight: 1500;
+}
+.hero-description{
+  font-weight: 500;
+  font-size: 1.6rem;
+}

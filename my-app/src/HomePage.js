@@ -1,4 +1,4 @@
-import React,{useState , useEffect} from 'react';
+import React,{useState , useEffect, useContext} from 'react';
 import { Github, ExternalLink, User, Briefcase, Code, Mail ,Facebook, Instagram, Linkedin  , telescope, Telescope , Twitter} from 'lucide-react';
 import './HomePage.css';
 import HeroVideo from '../src/components/videos/1110750_Animation_Blurred_3840x2160.mp4';
@@ -8,6 +8,7 @@ import img2 from './components/images/Screenshot 2025-01-01 182714.png'
 import img3 from './components/images/Screenshot 2025-01-03 003853.png'
 import img4 from './components/images/Screenshot 2025-01-17 181700.png'
 import img5 from './components/images/Screenshot 2025-01-17 181801.png'
+import NoteContext from './components/NoteContext';
 export const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   useEffect(() => {
@@ -28,6 +29,7 @@ const Portfolio = () => {
   const navigate = useNavigate() ; 
   const [result, setResult] = useState("");
   const[showAlert,setShowAlert] = useState(false) ; 
+  const{mode} = useContext(NoteContext)
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending...");
