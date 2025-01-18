@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import './Navbar.css';
-
+import logo from './images/my-logo.png'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,7 +17,10 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="container nav-container">
         <Link to="/" className="nav-logo" onClick={handleLinkClick}>
+          <div className='main-box'>
+            <img src={logo} className='my-logo'/>
           Adithya Sakthimani
+          </div>
         </Link>
         <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X /> : <Menu />}

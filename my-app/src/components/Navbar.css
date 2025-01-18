@@ -13,7 +13,15 @@
     align-items: center;
     height: 30px;
   }
-  
+  .my-logo{
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+  }
+  .main-box{
+    display: flex;
+    align-items: center;
+  }
   .nav-logo {
     font-size: 1.5rem;
     font-weight: 700;
