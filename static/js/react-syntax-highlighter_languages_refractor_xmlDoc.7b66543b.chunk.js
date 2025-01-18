@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio_app=self.webpackChunkportfolio_app||[]).push([[7019],{8245:a=>{function e(a){!function(a){function e(e,n){a.languages[e]&&a.languages.insertBefore(e,"comment",{"doc-comment":n})}var n=a.languages.markup.tag,t={pattern:/\/\/\/.*/,greedy:!0,alias:"comment",inside:{tag:n}},s={pattern:/'''.*/,greedy:!0,alias:"comment",inside:{tag:n}};e("csharp",t),e("fsharp",t),e("vbnet",s)}(a)}a.exports=e,e.displayName="xmlDoc",e.aliases=[]}}]);
+//# sourceMappingURL=react-syntax-highlighter_languages_refractor_xmlDoc.7b66543b.chunk.js.map
