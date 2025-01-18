@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState , useRef} from 'react';
 import { 
   User, 
   Code, 
@@ -11,28 +11,61 @@ import {
   Clock,
   Briefcase,
   GraduationCap,
-  Heart
-  ,infinity,
+  Heart,
   Instagram,
   Infinity
 } from 'lucide-react';
 import './About.css';
-import waving from './images/man-waving-his-hand-vector.png'
-const TimelineItem = ({ year, title, description, icon: Icon }) => (
-  <div className="timeline-item">
-    <div className="timeline-marker">
-      <Icon size={20} />
-      <span className="year">{year}</span>
-    </div>
-    <div className="timeline-content">
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
-  </div>
-);
+import waving from './images/man-waving-his-hand-vector.png';
+const TimelineItem = ({ year, title, description, icon: Icon, style }) => {
+  const itemRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-const SkillCard = ({ title, skills }) => (
-  <div className="skill-card">
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    if (itemRef.current) {
+      observer.observe(itemRef.current);
+    }
+
+    return () => {
+      if (itemRef.current) {
+        observer.unobserve(itemRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div 
+      ref={itemRef}
+      className={`timeline-item ${isVisible ? 'visible' : ''}`} 
+      style={style}
+    >
+      <div className="timeline-marker">
+        <Icon size={20} />
+      </div>
+      <div className="timeline-content">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+    </div>
+  );
+};
+
+
+const SkillCard = ({ title, skills, style }) => (
+  <div className="skill-card" style={style}>
     <h3>{title}</h3>
     <div className="skill-tags">
       {skills.map((skill, index) => (
@@ -44,11 +77,24 @@ const SkillCard = ({ title, skills }) => (
   </div>
 );
 
+const InterestCard = ({ title, description, style }) => (
+  <div className="interest-card" style={style}>
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+);
+
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   const timelineData = [
     {
       year: "2027",
-      title: "Bachlors in Electronics and Telecommunication Engineering",
+      title: "Bachelors in Electronics and Telecommunication Engineering",
       description: "Specialized in Artificial Intelligence and Machine Learning with research focus on Computer Vision.",
       icon: GraduationCap
     },
@@ -67,7 +113,7 @@ const About = () => {
     {
       year: "2023",
       title: "High School Graduation",
-      description: "Graduated 12 th with 93% in PCM and 91.8% overall",
+      description: "Graduated 12th with 93% in PCM and 91.8% overall",
       icon: Award
     }
   ];
@@ -75,15 +121,15 @@ const About = () => {
   const skills = [
     {
       title: "Web Development",
-      skills: ["React", "Node.js", "TypeScript",  "Express" , "Flask"]
+      skills: ["React", "Node.js", "TypeScript", "Express", "Flask"]
     },
     {
       title: "Programming Languages",
-      skills: ["Python", "JavaScript", "C++", "SQL" , "Embedded C " , "HTML" , "CSS" , "Verilog"]
+      skills: ["Python", "JavaScript", "C++", "SQL", "Embedded C", "HTML", "CSS", "Verilog"]
     },
     {
       title: "Tools & Technologies",
-      skills: ["Git","MongoDB", "VS Code", "MATLAB" ,"Orcad PSpice", "Adobe Premiere Pro "]
+      skills: ["Git", "MongoDB", "VS Code", "MATLAB", "Orcad PSpice", "Adobe Premiere Pro"]
     }
   ];
 
@@ -94,53 +140,76 @@ const About = () => {
     { number: "500+", label: "Questions on Leetcode" }
   ];
 
+  const interests = [
+    {
+      title: "Web Development",
+      description: "Passionate about building dynamic and responsive websites that offer seamless user experiences."
+    },
+    {
+      title: "Embedded Systems",
+      description: "Enjoy working with microcontrollers and hardware to create innovative embedded solutions."
+    },
+    {
+      title: "DSA (Data Structures & Algorithms)",
+      description: "Love solving complex problems using efficient data structures and algorithms to optimize performance."
+    },
+    {
+      title: "Problem Solving & Maths",
+      description: "Enjoy tackling mathematical problems and applying logical thinking to devise effective solutions."
+    }
+  ];
+
   return (
     <div className="about-container">
       {/* Hero Section */}
       <section className="about-hero">
-      <div className="hero-content">
-  <div className="hero-text">
-    <div className='about-txt'>
-    <h1>About Me</h1>
-    <p className="intro">
-    I am a passionate student specializing in Electronics and Web Development. My years of coding experience have equipped me to create innovative applications that address real-world challenges using cutting-edge technology.
-    </p>
-    <div className="my-social-links">
-      <a href="https://github.com/AdithyaSakthimani" className="social-link">
-        <Github size={20} />
-      </a>
-      <a href="https://www.linkedin.com/in/adithya-sakthimani-0459a7281/" className="social-link">
-        <Linkedin size={20} />
-      </a>
-      <a href="https://www.instagram.com/adithya_sakthimani/profilecard/?igsh=b3Vhc3pna25oY3hk" className="social-link">
-        <Instagram size={20} />
-      </a>
-      </div>
-    </div>
-  </div>
-  <div className="hero-stats">
-  <img src = {waving} className='waving-man'/>
-    <div className="stats-grid">
-      {stats.map((stat, index) => (
-        <div key={index} className="stat-card">
-          <h3>{stat.number}</h3>
-          <p>{stat.label}</p>
+        <div className="hero-content">
+          <div className="hero-text">
+            <div className='about-txt'>
+              <h1 className='about-hed'>About Me 😍</h1>
+              <p className="intro">
+                I am a passionate student specializing in Electronics and Web Development. My years of coding experience have equipped me to create innovative applications that address real-world challenges using cutting-edge technology.
+              </p>
+              <div className="my-social-links">
+                <a href="https://github.com/AdithyaSakthimani" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <Github size={20} />
+                </a>
+                <a href="https://www.linkedin.com/in/adithya-sakthimani-0459a7281/" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <Linkedin size={20} />
+                </a>
+                <a href="https://www.instagram.com/adithya_sakthimani/profilecard/?igsh=b3Vhc3pna25oY3hk" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <Instagram size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="hero-stats">
+            <img src={waving} alt="Waving man illustration" className='waving-man' />
+            <div className="stats-grid">
+              {stats.map((stat, index) => (
+                <div key={index} className="stat-card">
+                  <h3>{stat.number}</h3>
+                  <p>{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-      ))}
-      </div>
-    </div>
-</div>
       </section>
 
       {/* Journey Section */}
       <section className="journey-section">
         <h2 className="section-title">
           <Clock className="section-icon" />
-          My Journey
+          My Journey So Far 
         </h2>
         <div className="timeline">
           {timelineData.map((item, index) => (
-            <TimelineItem key={index} {...item} />
+            <TimelineItem 
+              key={index} 
+              {...item} 
+              style={{"--item-index": index}}
+            />
           ))}
         </div>
       </section>
@@ -153,36 +222,31 @@ const About = () => {
         </h2>
         <div className="skills-grid">
           {skills.map((category, index) => (
-            <SkillCard key={index} {...category} />
+            <SkillCard 
+              key={index} 
+              {...category} 
+              style={{"--item-index": index}}
+            />
           ))}
         </div>
       </section>
 
       {/* Interests Section */}
       <section className="interests-section">
-  <h2 className="section-title">
-    <Heart className="section-icon" />
-    What I Love
-  </h2>
-  <div className="interests-content">
-    <div className="interest-card">
-      <h3>Web Development</h3>
-      <p>Passionate about building dynamic and responsive websites that offer seamless user experiences.</p>
-    </div>
-    <div className="interest-card">
-      <h3>Embedded Systems</h3>
-      <p>Enjoy working with microcontrollers and hardware to create innovative embedded solutions.</p>
-    </div>
-    <div className="interest-card">
-      <h3>DSA (Data Structures & Algorithms)</h3>
-      <p>Love solving complex problems using efficient data structures and algorithms to optimize performance.</p>
-    </div>
-    <div className="interest-card">
-      <h3>Problem Solving & Maths</h3>
-      <p>Enjoy tackling mathematical problems and applying logical thinking to devise effective solutions.</p>
-    </div>
-  </div>
-</section>
+        <h2 className="section-title">
+          <Heart className="section-icon" />
+          What I Love
+        </h2>
+        <div className="interests-content">
+          {interests.map((interest, index) => (
+            <InterestCard
+              key={index}
+              {...interest}
+              style={{"--item-index": index}}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

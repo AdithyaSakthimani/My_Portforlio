@@ -1,7 +1,7 @@
 import React,{useState , useEffect, useContext} from 'react';
 import { Github, ExternalLink, User, Briefcase, Code, Mail ,Facebook, Instagram, Linkedin  , telescope, Telescope , Twitter} from 'lucide-react';
 import './HomePage.css';
-import HeroVideo from '../src/components/videos/1110750_Animation_Blurred_3840x2160.mp4';
+import HeroVideo from '../src/components/videos/4562023-hd_1040_1848_30fps.mp4';
 import { useNavigate } from 'react-router-dom';
 import img1 from './components/images/Screenshot 2025-01-17 181917.png'
 import img2 from './components/images/Screenshot 2025-01-01 182714.png'
@@ -83,7 +83,7 @@ const Portfolio = () => {
   useEffect(() => {
     const videoElement = document.querySelector(".hero-video");
     if (videoElement) {
-      videoElement.playbackRate = 1.5; 
+      videoElement.playbackRate = 0.75; 
     }
   }, []);
   return (

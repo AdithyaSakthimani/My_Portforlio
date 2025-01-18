@@ -704,10 +704,13 @@
     max-width: none;
   }
 }
-.hero-title{
-  font-weight: 1500;
+.hero-title {
+  font-weight: 700; /* Changed from 1500 since max valid font-weight is 900 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-.hero-description{
+
+.hero-description {
   font-weight: 500;
   font-size: 1.6rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
