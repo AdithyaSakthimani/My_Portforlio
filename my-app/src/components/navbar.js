@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Moon, Sun , AlignLeft} from 'lucide-react';
+import { Menu, X, Moon, Sun  } from 'lucide-react';
 import NoteContext from './NoteContext';
 import logo from './images/my-logo.png';
 import './Navbar.css'
@@ -31,7 +31,7 @@ const Navbar = () => {
             </div>
           </Link>
           <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? "" : <AlignLeft size={24} />}
+            {isOpen ? "" : <Menu size={24} />}
           </button>
         </div>
       </nav>

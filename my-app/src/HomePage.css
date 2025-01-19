@@ -707,19 +707,20 @@
 .hero-title {
   font-weight: 700; /* Changed from 1500 since max valid font-weight is 900 */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  color: #dbe9ea;
+  color: white;
 }
 
 .hero-description {
   font-weight: 500;
   font-size: 1.6rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  filter:grayscale(150%);
 }
 .cursor {
   display: inline-block;
-  width: 2px;
+  width: 6px;
   animation: blink 1s infinite;
-  font-weight: 100;
+  font-weight: 200;
 }
 @keyframes blink {
   0% { opacity: 1; }
@@ -728,6 +729,6 @@
 }
  @media all and (max-width: 450px) {
     .container-hero-content{
-      margin-top: 50px;
+      margin-top: 70px;
     }
  }

@@ -72,7 +72,6 @@
   top: 0;
   width: 100%;
   background: white;
-  box-shadow: var(--shadow-sm);
   z-index: var(--z-nav);
   height: var(--navbar-height);
 }
@@ -180,7 +179,8 @@
 .main-box {
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  color:rgb(16, 22, 104) !important;
+  font-size: 1.7rem;
 }
 @media all and (max-width:380px) {
   .main-box{
@@ -203,5 +203,5 @@
   }
 }
 .main-box{
-  color:#2c5282;
+  color:#2c5282 !important; 
 }
