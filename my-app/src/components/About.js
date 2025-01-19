@@ -62,8 +62,6 @@ const TimelineItem = ({ year, title, description, icon: Icon, style }) => {
     </div>
   );
 };
-
-
 const SkillCard = ({ title, skills, style }) => (
   <div className="skill-card" style={style}>
     <h3>{title}</h3>
@@ -86,7 +84,94 @@ const InterestCard = ({ title, description, style }) => (
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const journeysectionRef = useRef(null) ; 
+  const skillssectionRef = useRef(null) ; 
+  const intrestsectionRef = useRef(null) ; 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add the animate class when the section comes into view
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
 
+    // Check if the ref is available
+    if (journeysectionRef.current) {
+      observer.observe(journeysectionRef.current);
+    }
+
+    return () => {
+      if (journeysectionRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add the animate class when the section comes into view
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    // Check if the ref is available
+    if (skillssectionRef.current) {
+      observer.observe(skillssectionRef.current);
+    }
+
+    return () => {
+      if (skillssectionRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add the animate class when the section comes into view
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    if (intrestsectionRef.current) {
+      observer.observe(intrestsectionRef.current);
+    }
+
+    return () => {
+      if (intrestsectionRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+      
+  
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -183,22 +268,12 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="hero-stats">
-            <img src={waving} alt="Waving man illustration" className='waving-man' />
-            <div className="stats-grid">
-              {stats.map((stat, index) => (
-                <div key={index} className="stat-card">
-                  <h3>{stat.number}</h3>
-                  <p>{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <img src={waving} alt="Waving man illustration" className='waving-man' />
         </div>
       </section>
 
       {/* Journey Section */}
-      <section className="journey-section">
+      <section className="journey-section" ref={journeysectionRef}>
         <h2 className="section-title">
           <Clock className="section-icon" />
           My Journey So Far 
@@ -215,7 +290,7 @@ const About = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="skills-section">
+      <section className="skills-section" ref={skillssectionRef}>
         <h2 className="section-title">
           <Brain className="section-icon" />
           Skills & Expertise
@@ -232,7 +307,7 @@ const About = () => {
       </section>
 
       {/* Interests Section */}
-      <section className="interests-section">
+      <section className="interests-section" ref={intrestsectionRef}>
         <h2 className="section-title">
           <Heart className="section-icon" />
           What I Love

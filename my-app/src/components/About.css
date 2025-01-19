@@ -39,10 +39,6 @@
   margin-bottom: 2rem;
 }
 
-.waving-man {
-  width: 50%;
-  height: 500px;
-}
 .my-social-links {
   display: flex;
   gap: 1.5rem;
@@ -387,7 +383,8 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 10px;
-  padding-top: 10px;
+  width: 500px;
+  height: fit-content;
   }
 .intro{
   font-size: 1.3rem;
@@ -398,5 +395,84 @@
   border-radius: 5px;
   padding-bottom: 10px;
 }
+.hero-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+  width: 100%;
+}
+.waving-man {
+  width: 100%;
+  margin-left: 30px;
+  height: 400px; 
+}
+@media all and (max-width: 1000px) {
+  .hero-content{
+    flex-direction: column !important;
+    overflow-x: hidden;
+  }
+  .about-txt{
+    width: 80%;
+    padding-right: 0;
+    text-align: left;
+  }
+  .waving-man{
+    margin-left: 0;
+    width: 80%;
+    height: 450px;
+  }
+}
+@media all and (max-width: 400px) {
+  .waving-man{
+    margin-left: 0;
+    width: 80%;
+    height: 300px;
+  }
+  .about-hed{
+    font-size: 2rem !important;
+  }
+}
+.hero-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between !important;
+  width: 100%;
+  gap: 4rem; /* Increased from previous spacing */
+  align-items: center;
+}
 
+.waving-man {
+  margin-left: 4rem; /* Increased from 2rem */
+}
+.journey-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease-out;
+}
 
+.journey-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.journey-section.animate .timeline-item {
+  transition-delay: calc(var(--item-index) * 0.2s);
+}
+.skills-section.animate{
+  opacity: 1;
+  transform: translateY(0);
+}
+.skills-section{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease-out;
+}
+.interests-section{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease-out;
+}
+.interests-section.animate{
+  opacity: 1;
+  transform: translateY(0);
+}

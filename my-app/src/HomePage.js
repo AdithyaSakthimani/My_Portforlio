@@ -1,4 +1,4 @@
-import React,{useState , useEffect, useContext} from 'react';
+import React,{useState , useEffect, useContext,useRef} from 'react';
 import { Github, ExternalLink, User, Briefcase, Code, Mail ,Facebook, Instagram, Linkedin  , telescope, Telescope , Twitter} from 'lucide-react';
 import './HomePage.css';
 import HeroVideo from '../src/components/videos/4562023-hd_1040_1848_30fps.mp4';
@@ -32,6 +32,7 @@ const Portfolio = () => {
   const [result, setResult] = useState("");
   const[showAlert,setShowAlert] = useState(false) ; 
   const{mode} = useContext(NoteContext)
+  const contactSectionRef = useRef(null);
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending...");
@@ -61,33 +62,32 @@ const Portfolio = () => {
 
     setTimeout(() => setShowAlert(false), 5000);
   };
-
-  const projects = [
-    {
-      title: "Fitness Tracker App - Elevate AI",
-      description: "An intelligent fitness tracking application that helps users monitor their workouts, set goals, and track progress using AI-powered insights.",
-      technologies: ["React", "TensorFlow", "Node.js", "MongoDB"],
-      image: "/api/placeholder/600/400"
-    },
-    {
-      title: "Derma Doc AI",
-      description: "A skin disease detection application powered by deep learning that helps identify various skin conditions through image analysis.",
-      technologies: ["Python", "TensorFlow", "Flask", "React Native"],
-      image: "/api/placeholder/600/400"
-    },
-    {
-      title: "Image Steganography App",
-      description: "A secure application for hiding sensitive information within images using advanced steganography techniques.",
-      technologies: ["Python", "OpenCV", "Cryptography", "PyQt"],
-      image: "/api/placeholder/600/400"
-    }
-  ];
   useEffect(() => {
     const videoElement = document.querySelector(".hero-video");
     if (videoElement) {
       videoElement.playbackRate = 0.75; 
     }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target); 
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    if (contactSectionRef.current) {
+      observer.observe(contactSectionRef.current);
+    }
+
+    return () => {
+      observer.disconnect(); 
+    };
   }, []);
+  
   return (
     <div>
   {/* Hero Section */}
@@ -132,7 +132,7 @@ const Portfolio = () => {
   </div>
 </section>
   {/* Contact Section */}
-  <section className="contact-section">
+  <section className="contact-section" ref={contactSectionRef}>
     <div className="contact-header">
       <h2 className="contact-title">Let's Connect</h2>
       <p className="contact-description">
