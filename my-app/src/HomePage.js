@@ -13,20 +13,33 @@ import TypingTitle from './components/TypingTitle';
 
 export const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollTop;
       const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scroll = totalScroll / windowHeight;
+      const scroll = `${(totalScroll / windowHeight) * 100}%`;
       setScrollProgress(scroll);
     }
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  return <div className="scroll-progress" style={{transform: `scaleX(${scrollProgress})`}} />;
-}
+  return (
+    <div 
+      className="scroll-progress" 
+      style={{
+        transform: `scaleX(${scrollProgress})`,
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        pointerEvents: 'none'
+      }} 
+    />
+  );
+};
 const Portfolio = () => {
   const navigate = useNavigate() ; 
   const [result, setResult] = useState("");
@@ -92,7 +105,7 @@ const Portfolio = () => {
     <div>
   {/* Hero Section */}
   <section className="hero">
-  <video className="hero-video" src={HeroVideo} autoPlay muted loop />
+  <video className="hero-video" src={HeroVideo} autoPlay muted loop playsInline />
     <div className="container-hero-content">
       <h1 className="hero-title"><TypingTitle/></h1>
       <p className="hero-description">
