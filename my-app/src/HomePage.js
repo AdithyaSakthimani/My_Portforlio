@@ -9,6 +9,8 @@ import img3 from './components/images/Screenshot 2025-01-03 003853.png'
 import img4 from './components/images/Screenshot 2025-01-17 181700.png'
 import img5 from './components/images/Screenshot 2025-01-17 181801.png'
 import NoteContext from './components/NoteContext';
+import TypingTitle from './components/TypingTitle';
+
 export const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   useEffect(() => {
@@ -92,7 +94,7 @@ const Portfolio = () => {
   <section className="hero">
   <video className="hero-video" src={HeroVideo} autoPlay muted loop />
     <div className="container-hero-content">
-      <h1 className="hero-title">Hello, I'm a Full Stack Web Developer</h1>
+      <h1 className="hero-title"><TypingTitle/></h1>
       <p className="hero-description">
         I build innovative solutions using AI , Embedded Systems and other modern technologies
       </p>
@@ -132,7 +134,7 @@ const Portfolio = () => {
   {/* Contact Section */}
   <section className="contact-section">
     <div className="contact-header">
-      <h2 className="contact-title">Get in Touch</h2>
+      <h2 className="contact-title">Let's Connect</h2>
       <p className="contact-description">
         Have a question or want to work together? Fill out the form below, and
         I'll get back to you as soon as possible.
@@ -174,7 +176,7 @@ const Portfolio = () => {
   {/* Social Footer */}
   <footer className="social-footer">
     <div className="social-container">
-      <h3>Connect With Me</h3>
+      <h3>My Social Media</h3>
       <div className="social-links">
         <a href="https://x.com/legendarypheon2" target="_blank" rel="noopener noreferrer">
           <Twitter size={24} />
