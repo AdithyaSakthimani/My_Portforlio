@@ -3,13 +3,13 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f8fafc;
+  background: rgb(17 24 39) !important;
   color: #333;
 }
 
 /* Header Section */
 .header-section {
-  background: linear-gradient(to right, var(--primary-color), #4f46e5);
+  background: rgb(147 51 234);
   color: white;
   padding: 60px 0;
   text-align: center;
@@ -27,9 +27,10 @@ body {
 
 .header-description {
   font-size: 20px;
-  color: #cce7ff;
+  color:white;
   max-width: 600px;
   margin: 0 auto;
+  filter: brightness(0.9);
 }
 
 /* Projects Grid */
@@ -43,7 +44,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 25px;
-  margin-top: 30px;
+  margin-top: 30px; 
 }
 
 /* Project Card */
@@ -77,7 +78,7 @@ body {
 
 .project-description {
   font-size: 16px;
-  color: #555;
+  color: rgb(17 24 39);
   line-height: 1.6;
 }
 

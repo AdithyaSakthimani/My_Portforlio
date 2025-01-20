@@ -16,7 +16,7 @@ import {
   Infinity
 } from 'lucide-react';
 import './About.css';
-import waving from './images/man-waving-his-hand-vector.png';
+import waving from './images/PngItem_1127587-removebg.png';
 const TimelineItem = ({ year, title, description, icon: Icon, style }) => {
   const itemRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -53,7 +53,7 @@ const TimelineItem = ({ year, title, description, icon: Icon, style }) => {
       style={style}
     >
       <div className="timeline-marker">
-        <Icon size={20} />
+        <Icon size={20}  />
       </div>
       <div className="timeline-content">
         <h3>{title}</h3>
@@ -275,7 +275,7 @@ const About = () => {
       {/* Journey Section */}
       <section className="journey-section" ref={journeysectionRef}>
         <h2 className="section-title">
-          <Clock className="section-icon" />
+          <Clock className="section-icon" size={40} style={{ color: "white" }}/>
           My Journey So Far 
         </h2>
         <div className="timeline">
@@ -292,7 +292,7 @@ const About = () => {
       {/* Skills Section */}
       <section className="skills-section" ref={skillssectionRef}>
         <h2 className="section-title">
-          <Brain className="section-icon" />
+          <Brain className="section-icon"  size={40}  style={{ color: "white" }}/>
           Skills & Expertise
         </h2>
         <div className="skills-grid">
@@ -309,7 +309,7 @@ const About = () => {
       {/* Interests Section */}
       <section className="interests-section" ref={intrestsectionRef}>
         <h2 className="section-title">
-          <Heart className="section-icon" />
+          <Heart className="section-icon" size={40} style={{ color: "white" }} />
           What I Love
         </h2>
         <div className="interests-content">

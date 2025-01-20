@@ -1,24 +1,30 @@
 :root {
   --primary-color: #2563eb;
   --primary-light: #3b82f6;
-  --text-dark: #1f2937;
-  --text-gray: #4b5563;
-  --background-light: #f3f4f6;
+  --text-dark: white;
+  --text-gray: white;
+  --background-light: rgb(30 41 59);;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
   --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
   --transition: all 0.3s ease;
 }
 .about-container {
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  background: rgb(17 24 39);
+  background-color: rgb(93, 21, 160);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .about-hero {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  column-gap: 3rem;
   padding: 4rem 0;
-  margin-bottom: 4rem;
+  width: 100%;
 }
 
 .hero-content {
@@ -122,6 +128,7 @@
 .timeline-item {
   position: relative;
   margin-bottom: 3rem;
+  width: 80%;
 }
 
 .timeline-marker {
@@ -134,32 +141,26 @@
 }
 
 .timeline-marker svg {
-  background: white;
   padding: 0.5rem;
   border-radius: 50%;
-  color: var(--primary-color);
+  color:black;
   box-shadow: var(--shadow-sm);
 }
 
-.year {
-  font-size: 0.875rem;
-  color: var(--text-gray);
-}
-
 .timeline-content {
-  background: white;
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: var(--shadow-sm);
 }
 
 .timeline-content h3 {
-  color: var(--text-dark);
+  color: black;
   margin-bottom: 0.5rem;
 }
 
 .timeline-content p {
-  color: var(--text-gray);
+  color:black;
+  filter:brightness(0.5);
 }
 
 /* Skills Section */
@@ -181,7 +182,7 @@
 }
 
 .skill-card h3 {
-  color: var(--text-dark);
+  color:black;
   margin-bottom: 1.5rem;
 }
 
@@ -230,13 +231,13 @@
 }
 
 .interest-card h3 {
-  color: var(--text-dark);
+  color: black;
   margin-bottom: 1rem;
 }
 
 .interest-card p {
-  color: var(--text-gray);
-  line-height: 1.6;
+  color: black;
+  line-height: 2;
 }
 
  .hero-content {
@@ -359,7 +360,7 @@
 .about-hed {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  color:  #2b2a2a !important; 
+  color: white;
   background-clip: text;
   animation: scaleIn 1s ease forwards;
 }
@@ -369,7 +370,7 @@
 }
 @keyframes float {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
 }
 
@@ -387,8 +388,9 @@
   height: fit-content;
   }
 .intro{
-  font-size: 1.3rem;
-  color: black;
+  font-size: 1.5rem;
+  color: white ;
+  filter: brightness(0.9);
 }
 
 .my-social-links{
@@ -421,19 +423,22 @@
     width: 70%;
     height: 450px;
   }
+  .journey-section{
+    padding-left: 20px !important;
+  }
 }
 @media all and (max-width: 600px) {
   .waving-man{
     margin-left: 0;
-    width: 100%;
+    width: 90%;
     height: 450px;
   }
 }
 @media all and (max-width: 400px) {
   .waving-man{
     margin-left: 0;
-    width: 100%;
-    height: 300px;
+    width: 85%;
+    height: 350px;
   }
   .about-hed{
     font-size: 2rem !important;
@@ -455,6 +460,7 @@
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.9s ease-out;
+  padding-left: 10px;
 }
 
 .journey-section.animate {
@@ -484,5 +490,7 @@
   transform: translateY(0);
 }
 .waving-man {
+  margin-top: 50px;
+  padding-right: 6rem;
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.5));
 }

@@ -71,7 +71,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: white;
+  background: rgb(17 24 39) !important;
   z-index: var(--z-nav) !important;
   height: var(--navbar-height);
 }
@@ -96,6 +96,7 @@
   border: none;
   cursor: pointer;
   padding: var(--spacing-xs);
+  color: white;
   transition: color var(--transition-normal);
 }
 
@@ -172,13 +173,13 @@
 .my-logo {
   width: 30px;
   height: 30px;
-  padding: 20px;
 
 }
 
 .main-box {
   display: flex;
   align-items: center;
+  margin-left: auto !important;
   color:rgb(16, 22, 104) !important;
   font-size: 1.7rem;
 }
@@ -203,7 +204,11 @@
   }
 }
 .main-box{
-  color:#2c5282 !important; 
+  color:white !important;  
+  position: absolute;
+  left: 0;
+  top: 20px;
+  padding-left: 40px;
 }
 /* Fixed navbar positioning and sizing */
 .navbar {
@@ -236,7 +241,17 @@
 .my-logo {
   width: 30px;
   height: 30px;
-  padding: 20px;
-  transform: translateZ(0); /* Force GPU acceleration */
+  padding-right: 20px;
+  transform: translateZ(0); /* Force GPU
+   acceleration */
+   display: none;
 }
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
 

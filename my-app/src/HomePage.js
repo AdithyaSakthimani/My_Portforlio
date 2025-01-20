@@ -1,7 +1,7 @@
 import React,{useState , useEffect, useContext,useRef} from 'react';
 import { Github, ExternalLink, User, Briefcase, Code, Mail ,Facebook, Instagram, Linkedin  , telescope, Telescope , Twitter} from 'lucide-react';
 import './HomePage.css';
-import HeroVideo from '../src/components/videos/4562023-hd_1040_1848_30fps.mp4';
+import HeroVideo from '../src/components/videos/lofi-cozy-house-rainy-night-moewalls-com.mp4';
 import { useNavigate } from 'react-router-dom';
 import img1 from './components/images/Screenshot 2025-01-17 181917.png'
 import img2 from './components/images/Screenshot 2025-01-01 182714.png'
@@ -103,7 +103,7 @@ const Portfolio = () => {
   }, []);
   
   return (
-    <div>
+    <div className='homepage-body'>
   <section className="hero">
   <video className="hero-video" src={HeroVideo} autoPlay muted loop playsInline />
     <div className="container-hero-content">

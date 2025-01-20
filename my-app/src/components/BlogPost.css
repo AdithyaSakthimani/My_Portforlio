@@ -2,12 +2,11 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f5f5f5;
     margin-top: 50px;
   }
   
   header {
-    background-color: #1a365d;
+    background-color: rgb(147 51 234);
     color: white;
     padding: 2rem 0;
     margin-bottom: 2rem;

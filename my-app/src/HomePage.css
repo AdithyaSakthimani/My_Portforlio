@@ -13,7 +13,6 @@
   padding: 0 1.5rem;
 }
 /* Hero Section */
-
 .hero {
   background: linear-gradient(to right, var(--primary-color), #4f46e5);
   padding: 5rem 0;
@@ -359,8 +358,10 @@
 }
 /* Contact Section */
 .contact-section {
-  background-color: var(--background-white);
-  padding: 5rem 1.5rem;
+  background: rgb(17 24 39);
+  padding: 4rem 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-header {
@@ -371,11 +372,12 @@
 .contact-title {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--text-dark);
+  color: white;
+  padding-right: 30px !important;
 }
 
 .contact-description {
-  color: var(--text-gray);
+  color: white;
   font-size: 1rem;
   margin: 0 auto;
   max-width: 600px;
@@ -395,7 +397,7 @@
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   font-size: 1rem;
-  width: 100%;
+  width: 90%;
   resize: none;
 }
 
@@ -408,6 +410,7 @@
   border-radius: 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 97%;
 }
 
 .contact-button:hover {
