@@ -10,6 +10,7 @@ import img4 from './components/images/Screenshot 2025-01-17 181700.png'
 import img5 from './components/images/Screenshot 2025-01-17 181801.png'
 import NoteContext from './components/NoteContext';
 import TypingTitle from './components/TypingTitle';
+import ImageCarousel from './components/ImageCarousel';
 
 export const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -103,11 +104,10 @@ const Portfolio = () => {
   
   return (
     <div>
-  {/* Hero Section */}
   <section className="hero">
   <video className="hero-video" src={HeroVideo} autoPlay muted loop playsInline />
     <div className="container-hero-content">
-      <h1 className="hero-title"><TypingTitle/></h1>
+      <TypingTitle/>
       <p className="hero-description">
         I build innovative solutions using AI , Embedded Systems and other modern technologies
       </p>
@@ -131,17 +131,9 @@ const Portfolio = () => {
         {/* Scrolling Image Carousel */}
 <section className="image-carousel">
   <div className="carousel-track">
-    <img src={img1} alt="Project 1" className="carousel-image" />
-    <img src={img2} alt="Project 2" className="carousel-image" />
-    <img src={img3} alt="Project 3" className="carousel-image" />
-    <img src={img4} alt="Project 4" className="carousel-image" />
-    <img src={img5} alt="Project 5" className="carousel-image" />
-    {/* Duplicate the images for seamless scrolling */}
-    <img src={img1} alt="Project 1" className="carousel-image" />
-    <img src={img2} alt="Project 2" className="carousel-image" />
-    <img src={img3} alt="Project 3" className="carousel-image" />
-    <img src={img4} alt="Project 4" className="carousel-image" />
-    <img src={img5} alt="Project 5" className="carousel-image" />
+  <ImageCarousel
+  images={[img1, img2, img3, img4, img5]} 
+/>
   </div>
 </section>
   {/* Contact Section */}

@@ -1,0 +1,42 @@
+.image-carousel {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    background-color: #f8f9fa;
+    height: 300px;
+    padding: 1rem 0;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .carousel-track.animate {
+    animation: scroll 10s linear infinite;
+  }
+  
+  .carousel-image {
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(20%);
+  }
+  
+  .carousel-image:hover {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
