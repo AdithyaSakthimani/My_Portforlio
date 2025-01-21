@@ -11,7 +11,7 @@ import img5 from './components/images/Screenshot 2025-01-17 181801.png'
 import NoteContext from './components/NoteContext';
 import TypingTitle from './components/TypingTitle';
 import ImageCarousel from './components/ImageCarousel';
-
+import { SpeedInsights } from '@vercel/speed-insights/react';
 export const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   
@@ -198,6 +198,7 @@ const Portfolio = () => {
       </div>
     </div>
   </footer>
+  <SpeedInsights />
 </div>
 
   );
