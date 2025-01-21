@@ -257,13 +257,13 @@ const About = () => {
               </p>
               <div className="my-social-links">
                 <a href="https://github.com/AdithyaSakthimani" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <Github size={20} />
+                  <Github size={30} />
                 </a>
                 <a href="https://www.linkedin.com/in/adithya-sakthimani-0459a7281/" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <Linkedin size={20} />
+                  <Linkedin size={30} />
                 </a>
                 <a href="https://www.instagram.com/adithya_sakthimani/profilecard/?igsh=b3Vhc3pna25oY3hk" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <Instagram size={20} />
+                  <Instagram size={30} />
                 </a>
               </div>
             </div>

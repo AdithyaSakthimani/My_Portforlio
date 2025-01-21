@@ -1,5 +1,5 @@
 import React,{useState , useEffect, useContext,useRef} from 'react';
-import { Github, ExternalLink, User, Briefcase, Code, Mail ,Facebook, Instagram, Linkedin  , telescope, Telescope , Twitter} from 'lucide-react';
+import { Github, ExternalLink, User, Briefcase, Code, Mail ,Facebook, Instagram, Linkedin  , telescope, Telescope , Twitter , Phone} from 'lucide-react';
 import './HomePage.css';
 import HeroVideo from '../src/components/videos/lofi-cozy-house-rainy-night-moewalls-com.mp4';
 import { useNavigate } from 'react-router-dom';
@@ -181,19 +181,22 @@ const Portfolio = () => {
   {/* Social Footer */}
   <footer className="social-footer">
     <div className="social-container">
-      <h3>My Social Media</h3>
+      <h3>Contact Me</h3>
       <div className="social-links">
         <a href="https://x.com/legendarypheon2" target="_blank" rel="noopener noreferrer">
-          <Twitter size={24} />
+          <Twitter size={30} />
         </a>
         <a href="https://www.instagram.com/adithya_sakthimani/profilecard/?igsh=b3Vhc3pna25oY3hk" target="_blank" rel="noopener noreferrer">
-          <Instagram size={24} />
+          <Instagram size={30} />
         </a>
         <a href="https://www.linkedin.com/in/adithya-sakthimani-0459a7281/" target="_blank" rel="noopener noreferrer">
-          <Linkedin size={24} />
+          <Linkedin size={30} />
         </a>
         <a href="https://github.com/AdithyaSakthimani" target="_blank" rel="noopener noreferrer">
-          <Github size={24} />
+          <Github size={30} />
+        </a>
+        <a href="tel:+91-9866100630" target="_blank" rel="noopener noreferrer">
+        <Phone size ={30} />
         </a>
       </div>
     </div>
