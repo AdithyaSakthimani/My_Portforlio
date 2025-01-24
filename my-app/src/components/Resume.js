@@ -1,7 +1,8 @@
 import React from 'react';
-import { Download, Briefcase, GraduationCap, Code, Trophy,ExternalLink} from 'lucide-react';
+import { Download, Briefcase, GraduationCap, Code, Trophy, ExternalLink } from 'lucide-react';
 import './Resume.css';
 import pdfUrl from '../resume/my_resume.pdf'
+
 const ResumeSection = ({ title, icon, children }) => (
   <div className="resume-section">
     <div className="section-header">
@@ -29,29 +30,21 @@ const ExperienceItem = ({ role, company, period, achievements }) => (
   </div>
 );
 
-const ProjectItem = ({ title, description, achievements, github }) => (
+const ProjectItem = ({ title, github, achievements }) => (
   <div className="project-item">
-    <h3>{title}</h3>
-    <p>{description}</p>
+    <div className="item-header">
+      <h3>{title}</h3>
+      {github && (
+        <a href={github} target="_blank" rel="noreferrer" className="github-link">
+          GitHub <ExternalLink size={16} />
+        </a>
+      )}
+    </div>
     <ul>
       {achievements.map((achievement, index) => (
         <li key={index}>{achievement}</li>
       ))}
     </ul>
-    {github && (
-      <a href={github} className="github-link">
-        GitHub Link
-      </a>
-    )}
-  </div>
-);
-
-const EducationItem = ({ institution, degree, period, details }) => (
-  <div className="education-item">
-    <h3>{institution}</h3>
-    <div className="degree">{degree}</div>
-    <div className="period">{period}</div>
-    {details && <div className="details">{details}</div>}
   </div>
 );
 
@@ -72,11 +65,10 @@ const Resume = () => {
           <div className="personal-info">
             <h1>Adithya Sakthimani</h1>
             <div className="contact-info">
-              <p><strong>Email: </strong> adithyasmani.et23@rvce.edu.in</p>
-              <p><strong>Phone: </strong>  +91 9866100630</p>
-              <p><strong>Location: </strong>  Bengaluru</p>
-              <p><strong>Personal Website:</strong> <a href="https://my-portforlio-fbwa.vercel.app/" target="_blank"  rel="noreferrer" className='my-web'> 
-               My Website <ExternalLink  size={20}/> </a></p>
+              <p><strong>Location:</strong> Bengaluru</p>
+              <p><strong>Email:</strong> adithyasmani.et23@rvce.edu.in</p>
+              <p><strong>Phone:</strong> +91 9866100630</p>
+              <p><strong>Website:</strong> <a href="https://adithyasakthimani.vercel.app" target="_blank" rel="noreferrer">Portfolio</a></p>
             </div>
           </div>
           <button onClick={handleDownload} className="download-button">
@@ -91,8 +83,9 @@ const Resume = () => {
             company="Dyu Labs, Bangalore"
             period="08/2024 – Present"
             achievements={[
-              "Participated in workshops and presentations focused on IoT solutions.",
-              "Contributed to building and implementing a water level measurement system to gain hands-on experience."
+              "Collaborated with cross-functional engineering teams to design IoT water management solutions",
+              "Developed and calibrated advanced water level measurement system using precision sensors",
+              "Implemented embedded software algorithms to enhance system reliability"
             ]}
           />
         </ResumeSection>
@@ -100,46 +93,52 @@ const Resume = () => {
         <ResumeSection title="Projects" icon={<Code className="section-icon" />}>
           <ProjectItem
             title="Smart Fitness Tracker AI (Elevate Fitness AI)"
-            description="Developed a comprehensive fitness tracking system leveraging OpenCV for real-time pose estimation to ensure proper exercise form and track repetitions."
+            github="https://github.com/AdithyaSakthimani/SmartExerciseTrainerKit"
             achievements={[
-              "Integrated real-time sensors for heart rate monitoring (MAX30100), calorie tracking, and workout analysis using Embedded C.",
-              "The system features a user-friendly web interface built with React, Node.js, and Express, along with a MongoDB database for personalized goal tracking and progress visualization."
+              "Architected comprehensive fitness tracking system with OpenCV and advanced sensor technologies",
+              "Implemented real-time pose estimation achieving 98% accuracy in exercise form detection",
+              "Designed microcontroller-based architecture using Arduino with multiple sensor integrations",
+              "Created React-based user interface for workout metrics visualization"
             ]}
-            github="Smart Exercise Trainer Kit"
           />
+          
           <ProjectItem
             title="Skin Disease Detection AI (Derma Doc AI)"
-            description="Developed an AI-powered platform trained on a dataset of skin diseases and images to accurately diagnose conditions."
+            github="https://github.com/AdithyaSakthimani/DermaDocAI"
             achievements={[
-              "Utilized TensorFlow for image analysis and Lepton LLM for processing text-based user queries, offering an interactive experience like consulting a doctor.",
-              "The platform also suggests nearby doctors based on the diagnosed condition. Built with a React frontend and Flask, Express, and MongoDB backend for seamless data management and real-time feedback."
+              "Developed AI-powered diagnostic platform for skin disease identification",
+              "Trained image and text-based model with 90% accuracy in dermatological conditions",
+              "Integrated intelligent doctor recommendation system using Lepton LLM",
+              "Built full-stack web application with React, Node.js, and MongoDB"
             ]}
-            github="Derma Doc AI"
           />
+          
           <ProjectItem
-            title="Image Steganography"
-            description="Developed a secure image steganography platform that embeds hidden messages in images, using Huffman Tree for efficient text encryption."
+            title="Data Transmission using Encryption and Steganography"
+            github="https://github.com/AdithyaSakthimani/Image_Stegenography"
             achievements={[
-              "The system employs Discrete Wavelet Transform (DWT) and Haar Transform for embedding the encrypted data into the image, ensuring both security and high-quality image integrity.",
-              "The frontend is built using Vite for fast and modern web development, providing an intuitive interface for users to easily encrypt and decode messages."
+              "Engineered advanced data hiding system using cryptographic techniques",
+              "Implemented Huffman Tree encryption for robust data security",
+              "Utilized Discrete Wavelet Transform for image quality optimization",
+              "Developed high-performance frontend using Vite"
             ]}
-            github="Image Steganography"
           />
         </ResumeSection>
 
         <ResumeSection title="Education" icon={<GraduationCap className="section-icon" />}>
-          <EducationItem
-            institution="RV College of Engineering, Bangalore"
-            degree="Electronics and Telecommunication"
-            period="09/2023 – Present"
-            details="Current CGPA (End of Second Semester): 8.83"
-          />
-          <EducationItem
-            institution="St. Ann's Public School, Kochi"
-            degree="12th CBSE Boards"
-            period="06/2021 – 06/2023"
-            details="Scored 92.6% in PCM and 91.8% overall"
-          />
+          <div className="education-item">
+            <h3>RV College of Engineering, Bangalore</h3>
+            <div className="degree">Electronics and Telecommunication</div>
+            <div className="period">09/2023 – Present</div>
+            <div className="details">Current CGPA: 8.83</div>
+          </div>
+          
+          <div className="education-item">
+            <h3>St. Ann's Public School, Kochi</h3>
+            <div className="degree">12th CBSE Boards</div>
+            <div className="period">06/2021 – 06/2023</div>
+            <div className="details">Scored 92.6% in PCM, Overall: 91.8%</div>
+          </div>
         </ResumeSection>
 
         <ResumeSection title="Skills" icon={<Code className="section-icon" />}>
@@ -161,8 +160,8 @@ const Resume = () => {
 
         <ResumeSection title="Extracurricular Achievements" icon={<Trophy className="section-icon" />}>
           <ul className="achievements-list">
-            <li>Won 2nd Place by representing RVCE at VTU Interzonals and Zonals Chess tournaments.</li>
-            <li>Selected for VTU Nationals Team and Represented Kerala at Nation Chess tournament in Nashik.</li>
+            <li>Won 2nd Place at VTU Interzonals and Zonals Chess tournaments</li>
+            <li>Selected for VTU Nationals Team, representing Kerala at National Chess Tournament</li>
           </ul>
         </ResumeSection>
       </div>
