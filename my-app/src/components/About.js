@@ -243,6 +243,7 @@ const About = () => {
       description: "Enjoy tackling mathematical problems and applying logical thinking to devise effective solutions."
     }
   ];
+const introText = " I am a passionate student specializing in Electronics and Web Development. My years of coding experience have equipped me to create innovative applications that address real-world challenges using cutting-edge technology.";
 
   return (
     <div className="about-container">
@@ -251,9 +252,9 @@ const About = () => {
         <div className="hero-content">
           <div className="hero-text">
             <div className='about-txt'>
-              <h1 className='about-hed'>About Me 😍</h1>
+              <h1 className='about-hed'>About Me 😇</h1>
               <p className="intro">
-                I am a passionate student specializing in Electronics and Web Development. My years of coding experience have equipped me to create innovative applications that address real-world challenges using cutting-edge technology.
+                {introText}
               </p>
               <div className="my-social-links">
                 <a href="https://github.com/AdithyaSakthimani" target="_blank" rel="noopener noreferrer" className="social-link">
@@ -266,6 +267,7 @@ const About = () => {
                   <Instagram size={30} />
                 </a>
               </div>
+
             </div>
           </div>
           <img src={waving} alt="Waving man illustration" className='waving-man' />

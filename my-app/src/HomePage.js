@@ -14,7 +14,10 @@ import ImageCarousel from './components/ImageCarousel';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 export const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const handleNavToggle = useContext(NoteContext)
+
   useEffect(() => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollTop;

@@ -1,23 +1,24 @@
-import React, { useContext, useState } from 'react';
+// Navbar.js
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Moon, Sun  } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import NoteContext from './NoteContext';
 import logo from './images/my-logo.png';
-import './Navbar.css'
+import './Navbar.css';
+
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const { mode, setMode } = useContext(NoteContext);
+  const { isNavOpen, handleNavToggle } = useContext(NoteContext);
 
   const handleLinkClick = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
-    setIsOpen(false);
+    handleNavToggle(false); // Close the navbar on link click
   };
 
-  const toggleMode = (mode) => {
-    setMode(mode === 'light' ? 'dark' : 'light');
+  const toggleNav = () => {
+    handleNavToggle(!isNavOpen); // Toggle the navbar state
   };
 
   return (
@@ -30,21 +31,21 @@ const Navbar = () => {
               Adithya Sakthimani
             </div>
           </Link>
-          <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? "" : <Menu size={24} />}
+          <button className="nav-toggle" onClick={toggleNav}>
+            {isNavOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
       {/* Overlay */}
-      {isOpen && (
-        <div className="nav-overlay" onClick={() => setIsOpen(false)} />
+      {isNavOpen && (
+        <div className="nav-overlay" onClick={toggleNav} />
       )}
 
       {/* Side Navigation Panel */}
-      <div className={`side-nav ${isOpen ? 'active' : ''}`}>
+      <div className={`side-nav ${isNavOpen ? 'active' : ''}`}>
         <div className="side-nav-header">
-            <X size={24} onClick={() => setIsOpen(false)}  className='close-btn'/>
+          <X size={24} onClick={toggleNav} className="close-btn" />
         </div>
         <div className="side-nav-links">
           <Link to="/" className="nav-link" onClick={handleLinkClick}>
