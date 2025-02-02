@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 const TypingTitle = () => {
     const [text, setText] = useState('');
-    const fullText = "Hello, I'm a Full Stack Web Developer";
+    const fullText = "Hello, I'm Adithya Sakthimani";
     const [index, setIndex] = useState(0);
   
     useEffect(() => {

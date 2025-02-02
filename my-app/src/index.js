@@ -16,6 +16,7 @@ import Blog2 from './components/Blog2';
 import Blog3 from './components/Blog3';
 import Blog4 from './components/Blog4';
 import NoteContext from './components/NoteContext';
+import Footer from './components/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -38,6 +39,7 @@ const NavFunc = () => {
           <Route path="/blog/blog4" element={<Blog4 />} />
         </Routes>
       </div>
+      <Footer/>
     </>
   );
 };
