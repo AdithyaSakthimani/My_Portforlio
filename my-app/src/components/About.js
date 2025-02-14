@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import './About.css';
 import waving from './images/PngItem_1127587-removebg.png';
+import mychar from './images/25149101_6925644.jpg'
 const TimelineItem = ({ year, title, description, icon: Icon, style }) => {
   const itemRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -252,7 +253,10 @@ const introText = " I am a passionate student specializing in Electronics and We
         <div className="hero-content">
           <div className="hero-text">
             <div className='about-txt'>
-              <h1 className='about-hed'>About Me 😇</h1>
+              <div className='my-hed-area'>
+                <p className='about-small-hed'>About  </p>
+                <h1 className='about-hed'>Who is Adithya ? 🤔</h1>
+              </div>
               <p className="intro">
                 {introText}
               </p>
@@ -270,7 +274,7 @@ const introText = " I am a passionate student specializing in Electronics and We
 
             </div>
           </div>
-          <img src={waving} alt="Waving man illustration" className='waving-man' />
+          <img src={mychar} alt="Waving man illustration" className='waving-man' />
         </div>
       </section>
 

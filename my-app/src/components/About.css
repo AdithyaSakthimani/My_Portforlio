@@ -248,9 +248,7 @@
     flex-direction: column;
     gap: 2rem;
   }
-  .waving-man{
-    width: 100%;
-  }
+  
   .hero-stats{
     display: flex;
     flex-direction: row ;
@@ -351,27 +349,14 @@
   animation: fadeIn 0.6s ease forwards;
 }
 
-@keyframes scaleIn {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+
 .about-hed {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
   color: white;
   background-clip: text;
-  animation: scaleIn 1s ease forwards;
 }
-.waving-man {
-  animation: float 3s ease-in-out infinite;
-  transition: transform 0.3s ease;
-}
+
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-15px); }
@@ -407,14 +392,10 @@
   justify-content: space-between !important;
   width: 100%;
 }
-.waving-man {
-  width: 500px;
-  margin-left: 30px;
-  height: 500px; 
-}
+
 @media all and (max-width: 1000px) {
   .hero-content{
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
     overflow-x: hidden;
   }
   .about-txt{
@@ -511,4 +492,23 @@
 .skill-tag:hover {
   transform: scale(1.1) translateY(-7px) !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.about-small-hed{
+  margin-bottom: auto;
+  padding-bottom: 0 !important;
+  color: white;
+}
+.my-hed-area{
+  display: flex;
+  flex-direction: column;
+  column-gap: 0;
+}
+.about-hed{
+  padding-top: 0px;
+  margin-top: 0px;
+}
+.waving-man {
+  width: 80%;
+  border-radius: 20%;
+  height: 70% !important;
 }

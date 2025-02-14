@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import { 
   Github, ExternalLink, User, Briefcase, Code, Mail, Facebook, 
-  Instagram, Linkedin, Telescope, Twitter, Phone 
+  Instagram, Linkedin, Telescope, Twitter, Phone, ChevronDown 
 } from 'lucide-react';
 import './HomePage.css';
 import HeroVideo from '../src/components/videos/lofi-cozy-house-rainy-night-moewalls-com.mp4';
@@ -175,9 +175,10 @@ const Portfolio = () => {
               GitHub
             </button>
           </div>
+          <ChevronDown className='down-arrow' size={50}/>
         </div>
       </section>
-
+      
       {/* Scrolling Image Carousel */}
       <section className="image-carousel">
         <div className="carousel-track">

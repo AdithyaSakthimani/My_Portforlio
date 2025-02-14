@@ -9,7 +9,7 @@ body {
 
 /* Header Section */
 .header-section {
-  background: rgb(147 51 234);
+  background-image: url('./images/2228.jpg');
   color: white;
   padding: 60px 0;
   text-align: center;
@@ -19,7 +19,7 @@ body {
 }
 
 .header-title {
-  font-size: 42px;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 10px;
   letter-spacing: 1px;
@@ -44,7 +44,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 25px;
-  margin-top: 30px; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
 }
 
 /* Project Card */
@@ -162,5 +163,97 @@ body {
 
   .project-description {
     font-size: 15px;
+  }
+}
+/* Motivation Section */
+.motivation-section {
+  background-image: url('./images/8591.jpg');
+  padding: 60px 2.5rem;
+  width: calc(100% - 80px);
+  max-width: none;
+}
+
+.motivation-title {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.motivation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.motivation-card {
+  background-color: white;
+  border-radius: 1px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px ; 
+  max-height: none;
+  text-align: center;
+  padding-top: 0;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.motivation-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.motivation-icon {
+  color: #007acc;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.motivation-card-title {
+  font-size: 22px;
+  color: #007acc;
+  margin-bottom: 15px;
+}
+
+.motivation-description {
+  color: rgb(17 24 39);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.motivation-image-container {
+  overflow: hidden;
+  height: 310px;
+}
+
+.motivation-image {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0 !important;
+  margin-bottom: 0;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.motivation-card:hover .motivation-image {
+  transform: scale(1.01);
+}
+
+/* Responsive Design for Motivation Section */
+@media screen and (max-width: 768px) {
+  .motivation-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+
+  .motivation-card-title {
+    font-size: 20px;
   }
 }
