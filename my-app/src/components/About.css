@@ -509,6 +509,14 @@
 }
 .waving-man {
   width: 80%;
-  border-radius: 20%;
-  height: 70% !important;
+  border-radius: 20px ;
+  height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 0 0 !important;
+}
+@media all and  (max-width:1000px) {
+    .waving-man{
+      height:400px;
+    }
 }
